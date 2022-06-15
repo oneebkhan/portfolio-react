@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
+const Welcome = lazy(() => import('./pages/Welcome'))
 
 const App = () => {
   return (
-    <div>App</div>
+    <Router>
+        <Suspense /*fallback={<Loading />}*/>
+          <Routes>
+            <Route exact path='/'  element={<Welcome/>} />
+            {/* <Route path='*' component={InValidSurvey} /> */}
+          </Routes>
+        </Suspense>
+    </Router>
   )
 }
 
