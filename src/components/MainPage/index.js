@@ -5,7 +5,7 @@ const MainPageComponent = ({children, image}) => {
   return (
     <div>
       <MainPageBackgroundImage src={image} alt='Blurred image'/>
-      <MainPageContainer>{...children}</MainPageContainer>
+      <MainPageContainer>{children}</MainPageContainer>
     </div>
   )
 }

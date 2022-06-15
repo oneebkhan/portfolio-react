@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const Welcome = lazy(() => import('./pages/Welcome'))
+const MainPage = lazy(() => import('./pages/MainPage'))
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
         <Suspense /*fallback={<Loading />}*/>
           <Routes>
             <Route exact path='/'  element={<Welcome/>} />
+            <Route exact path='/dashboard'  element={<MainPage/>} />
             {/* <Route path='*' component={InValidSurvey} /> */}
           </Routes>
         </Suspense>
