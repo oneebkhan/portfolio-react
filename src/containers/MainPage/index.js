@@ -2,10 +2,20 @@ import React from 'react'
 import MainPageComponent from '../../components/MainPage'
 import SideBar from '../../components/SideBar'
 
-const MainPageContainer = ({sideBarOpen = false, setSideBarOpen}) => {
+const MainPageContainer = ({
+  sideBarOpen = false,
+  setSideBarOpen,
+  video,
+  setVideo
+}) => {
   return (
-    <MainPageComponent children={[<SideBar sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/>]}>
-      <SideBar sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}></SideBar>
+    <MainPageComponent>
+      <SideBar
+        sideBarOpen={sideBarOpen}
+        setSideBarOpen={setSideBarOpen}
+        video={video}
+        setVideo={setVideo}
+      ></SideBar>
     </MainPageComponent>
   )
 }

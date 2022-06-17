@@ -7,9 +7,9 @@ const WelcomeComponent = () => {
   
   useEffect(() => {
     setTimeout(() => {
-      navigate('/dashboard', {replace: true})
+      navigate('/home', {replace: true})
     }, 1000);
-  }, [])
+  })
 
   return (
     <StyledFade></StyledFade>

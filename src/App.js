@@ -11,7 +11,7 @@ const App = () => {
         <Suspense /*fallback={<Loading />}*/>
           <Routes>
             <Route exact path='/'  element={<Welcome/>} />
-            <Route exact path='/dashboard'  element={<MainPage/>} />
+            <Route exact path='/home'  element={<MainPage/>} />
             {/* <Route path='*' component={InValidSurvey} /> */}
           </Routes>
         </Suspense>

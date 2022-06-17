@@ -3,12 +3,14 @@ import styled from 'styled-components'
 export const SidebarElement = styled.li`
   list-style-type: none;
   padding: 0px;
-  font-size: 3vw;
+  font-size: 3vh;
   overflow: hidden;
   animation-timing-function: ease-in-out;
-  ${props => !props.isOpened && 'color: white;'}
-  animation: ${props => props.isOpened && 'slideDown 800ms 1;'}
-  animation-delay: ${props => props.elemNum * 300 + 300}ms;
+  color: white;
+  opacity: 0;
+  ${props => !props.isOpened && 'opacity: 1;'}
+  animation: ${props => props.isOpened && 'slideDown 700ms 1;'}
+  animation-delay: ${props => props.elemNum * 300 + 250}ms;
   animation-fill-mode: forwards;
 
   :after {
@@ -32,11 +34,12 @@ export const SidebarElement = styled.li`
   @keyframes slideDown {
   from {
     transform: translateY(-100px);
-    color: black;
+    opacity: 0;
   }
   to {
     transform: translateY(0px);
     color: white;
+    opacity: 1;
   }
 
 
@@ -44,8 +47,7 @@ export const SidebarElement = styled.li`
 
 export const SideBarContainer = styled.ul`
   display: flex;
-  height: 100vh;
-  align-items: center;
+  align-content: center;
 `
 
 export const StyledList = styled.ul`
@@ -54,37 +56,87 @@ export const StyledList = styled.ul`
 `
 
 export const Spacer = styled.div`
-  height: 100px;
+  height: ${props => (props.multiply || 1) * 100}px;
   width: 10px;
 `
 
 export const SlideSideBar = styled.div`
   position: absolute;
   background-color: black;
-  width: 100px;
-  height: 100px;
+  width: 100vw;
+  height: 100vh;
   animation-timing-function: ease-in-out;
   z-index: 1;
-  animation: ${props => props.isOpened ? 'slide-in' : 'slide-out'} 0.5s forwards;
-  -webkit-animation: ${props => props.isOpened ? 'slide-in' : 'slide-out'} 0.5s forwards;
-      
+  animation: ${props => (props.isOpened ? 'slide-in' : 'slide-out')}
+    ${props => (props.firstLoad ? '0.4s forwards' : '0s forwards')};
+  -webkit-animation: ${props => (props.isOpened ? 'slide-in' : 'slide-out')}
+    ${props => (props.firstLoad ? '0.4s forwards' : '0s forwards')};
+
   @keyframes slide-in {
-      0% { transform: translateX(-100vw); }
-      100% { transform: translateX(0px); }
+    0% {
+      transform: translateX(-100vw);
+    }
+    100% {
+      transform: translateX(0px);
+    }
   }
 
   @-webkit-keyframes slide-in {
-      0% { transform: translateX(-100vw); }
-      100% { -webkit-transform: translateX(0px); }
+    0% {
+      transform: translateX(-100vw);
+    }
+    100% {
+      -webkit-transform: translateX(0px);
+    }
   }
-      
+
   @keyframes slide-out {
-      0% { transform: translateX(0px); }
-      100% { transform: translateX(-100vw); }
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-100vw);
+    }
   }
 
   @-webkit-keyframes slide-out {
-      0% { -webkit-transform: translateX(0px); }
-      100% { -webkit-transform: translateX(-100vw); }
+    0% {
+      -webkit-transform: translateX(0px);
+    }
+    100% {
+      -webkit-transform: translateX(-100vw);
+    }
+  }
+`
+
+export const StyledVideo = styled.video`
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  filter: brightness(0%);
+  animation: ${props => (props.isOpened || props.fadeVideo) && 'fade-in'} 2s
+    forwards;
+  -webkit-animation: ${props =>
+      (props.isOpened || props.fadeVideo) && 'fade-in'}
+    2s forwards;
+
+  @keyframes fade-in {
+    0% {
+      filter: brightness(0%);
+    }
+    100% {
+      filter: brightness(40%);
+    }
+  }
+
+  @-webkit-keyframes fade-in {
+    0% {
+      filter: brightness(0%);
+    }
+    100% {
+      filter: brightness(40%);
+    }
   }
 `

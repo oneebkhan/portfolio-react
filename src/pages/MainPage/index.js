@@ -1,16 +1,23 @@
 import React, { useState } from 'react'
 import MainPageContainer from '../../containers/MainPage'
-import { MdMenu } from 'react-icons/md'
+import Dashboard from '../../containers/Dashboard'
 
 const MainPage = () => {
   const [sideBarOpen, setSideBarOpen] = useState(false)
+  const [video, setVideo] = useState('Fruit.mp4')
 
   return (
     <div>
-      <MainPageContainer sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen}/>
-      {<MdMenu style={{color: 'white', width: '45px', height: '45px'}} onClick={()=>{setSideBarOpen(true); 
-      console.log('setSideBarOpen: ', sideBarOpen);
-      }}/>}
+      <MainPageContainer
+        sideBarOpen={sideBarOpen}
+        setSideBarOpen={setSideBarOpen}
+        video={video}
+        setVideo={setVideo}
+      />
+      <Dashboard
+        sideBarOpen={sideBarOpen}
+        setSideBarOpen={setSideBarOpen}
+      ></Dashboard>
     </div>
   )
 }
