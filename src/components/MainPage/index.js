@@ -1,10 +1,10 @@
 import React from 'react'
 import { MainPageBackgroundImage, MainPageContainer } from './style'
 
-const MainPageComponent = ({children, image}) => {
+const MainPageComponent = ({children}) => {
   return (
     <div>
-      <MainPageBackgroundImage src={image} alt='Blurred image'/>
+      <MainPageBackgroundImage/>
       <MainPageContainer>{children}</MainPageContainer>
     </div>
   )

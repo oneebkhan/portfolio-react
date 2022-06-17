@@ -1,10 +1,9 @@
 import React from 'react'
-// import { Layout } from './styles'
-// import LandingPageContainer from '@/containers/LandingPage'
+import WelcomeComponent from '../../components/Welcome'
 
 const LandingPage = () => {
   return (
-    <div>app</div>
+    <WelcomeComponent></WelcomeComponent>
   )
 }
 export default LandingPage
