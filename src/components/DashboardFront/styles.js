@@ -1,17 +1,19 @@
 import styled from "styled-components";
+import { MdKeyboardArrowDown } from 'react-icons/md'
 
 export const MainDashboardComponent = styled.div`
-  overflow-x: hidden
+  overflow-x: hidden;
   position: relative;
+  overflow-y: hidden;
 `
 
 export const BottomText = styled.div`
   font-family: 'Parisienne', Poppins;
   color: white; 
   position: absolute; 
-  top: 40%;
-  font-size: 9vh;
-  padding: 0vh 0vw 0vw 10vw;
+  top: 50vh;
+  font-size: 8vh;
+  margin: 0vh 0vw 0vw 10vw;
   animation-timing-function: ease-in-out;
   opacity: 0;
   animation: slideDown 700ms 1;
@@ -70,4 +72,93 @@ export const StyledVideo = styled.video`
       filter: brightness(40%);
     }
   }
+`
+export const GreySection = styled.div`
+  background-color: rgb(41,55,72);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  color: white;
+  padding: 10vh 0vh 9vh 0vh;
+  height: 2000px;
+`
+
+export const BlackSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  color: white;
+  padding: 10vh 0vh 9vh 0vh;
+`
+
+export const LeftPaddingFood = styled.div`
+  padding-left: 80%;
+
+  @media only screen and (max-width: 1100px) {
+    padding-left: 70%;
+  }
+  @media only screen and (max-width: 800px) {
+    padding-left: 50%;
+  }
+  @media only screen and (max-width: 500px) {
+    padding-left: 40%;
+  }
+`
+
+export const SpinningFood = styled.img`
+  animation: rotation 50s infinite linear;
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+`
+
+export const QuoteText = styled.div`
+  position: absolute;
+  font-size: 2vw;
+  padding-left: 9vw;
+  max-width: 40%;
+
+  @media only screen and (max-width: 800px) {
+    padding-left: 10%;
+    font-size: 2vh;
+  }
+`
+export const BottomArrow = styled.div`
+  font-family: 'Parisienne', Poppins;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  color: white; 
+  position: absolute; 
+  top: 85vh;
+  font-size: 8vh;
+  animation-timing-function: ease-in-out;
+  animation-name: stretch;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+
+  @keyframes stretch {
+    0% {
+      opacity: 0;   
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+`
+
+export const StyledMdKeyboardArrowDown = styled(MdKeyboardArrowDown)`
+  width: 3vh;
 `

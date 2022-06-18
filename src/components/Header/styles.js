@@ -20,6 +20,7 @@ export const StyledMdMenu = styled(MdMenu)`
   color: white; 
   width: 3.5vh; 
   height: 3.5vh;
+  z-index: 2;
 
   :hover {
     cursor: pointer;

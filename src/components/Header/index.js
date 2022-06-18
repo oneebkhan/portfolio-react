@@ -10,8 +10,8 @@ const Header = ({sideBarOpen, setSideBarOpen}) => {
         }}
       />
       <StyledSocialSection>
-        <StyledBsFacebook onClick={()=>{window.open('http://www.facebook.com','_blank')}}/>
-        <StyledBsInstagram onClick={()=>{window.open('http://www.instagram.com','_blank')}}/>
+        <StyledBsFacebook onClick={()=>{window.open('https://facebook.com/profile.php?id=100056815101699','_blank')}}/>
+        <StyledBsInstagram onClick={()=>{window.open('https://www.instagram.com/indulgence_by_ayesha/','_blank')}}/>
       </StyledSocialSection>
     </StyledHeaderContainer>
   )

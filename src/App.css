@@ -4,9 +4,11 @@ html {
   font-family: 'Poppins', sans-serif;
   margin: 0px;
   background-color: black;
+  overflow-x:hidden;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0px;
+  overflow-x:hidden;
 }

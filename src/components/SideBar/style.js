@@ -67,7 +67,7 @@ export const SlideSideBar = styled.div`
   width: 100vw;
   height: 100vh;
   animation-timing-function: ease-in-out;
-  z-index: 1;
+  z-index: 2;
   animation: ${props => (props.isOpened ? 'slide-in' : 'slide-out')}
     ${props => (props.firstLoad ? '0.4s forwards' : '0s forwards')};
   -webkit-animation: ${props => (props.isOpened ? 'slide-in' : 'slide-out')}
