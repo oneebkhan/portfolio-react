@@ -1,6 +1,7 @@
 import React from 'react'
 import MainPageComponent from '../../components/MainPage'
 import SideBar from '../../components/SideBar'
+import Dashboard from '../../containers/Dashboard'
 
 const MainPageContainer = ({
   sideBarOpen = false,
@@ -16,6 +17,10 @@ const MainPageContainer = ({
         video={video}
         setVideo={setVideo}
       ></SideBar>
+      <Dashboard
+        sideBarOpen={sideBarOpen}
+        setSideBarOpen={setSideBarOpen}
+      ></Dashboard>
     </MainPageComponent>
   )
 }

@@ -6,6 +6,7 @@ export const SidebarElement = styled.li`
   font-size: 3vh;
   overflow: hidden;
   animation-timing-function: ease-in-out;
+  cursor: pointer;
   color: white;
   opacity: 0;
   ${props => !props.isOpened && 'opacity: 1;'}
@@ -56,12 +57,12 @@ export const StyledList = styled.ul`
 `
 
 export const Spacer = styled.div`
-  height: ${props => (props.multiply || 1) * 100}px;
+  height: ${props => (props.multiply || 1) * 8}vh;
   width: 10px;
 `
 
 export const SlideSideBar = styled.div`
-  position: absolute;
+  position: fixed;
   background-color: black;
   width: 100vw;
   height: 100vh;

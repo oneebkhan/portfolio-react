@@ -53,7 +53,8 @@ const SideBar = ({ sideBarOpen = false, setSideBarOpen, video, setVideo }) => {
           width: '45px',
           height: '45px',
           padding: '2vh 3vw',
-          position: 'relative'
+          position: 'relative',
+          cursor: 'pointer'
         }}
         onClick={() => {
           setSideBarOpen(false)
