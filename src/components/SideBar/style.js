@@ -9,6 +9,7 @@ export const SidebarElement = styled.li`
   cursor: pointer;
   color: white;
   opacity: 0;
+  transform: translate3d(0, 0, 0);
   ${props => !props.isOpened && 'opacity: 1;'}
   animation: ${props => props.isOpened && 'slideDown 700ms 1;'}
   animation-delay: ${props => props.elemNum * 300 + 250}ms;
@@ -67,27 +68,18 @@ export const SlideSideBar = styled.div`
   width: 100vw;
   height: 100vh;
   animation-timing-function: ease-in-out;
+  transform: translate3d(0, 0, 0);
+  overscroll-behavior: contain;
   z-index: 2;
   animation: ${props => (props.isOpened ? 'slide-in' : 'slide-out')}
     ${props => (props.firstLoad ? '0.4s forwards' : '0s forwards')};
-  -webkit-animation: ${props => (props.isOpened ? 'slide-in' : 'slide-out')}
-    ${props => (props.firstLoad ? '0.4s forwards' : '0s forwards')};
-
+  
   @keyframes slide-in {
     0% {
-      transform: translateX(-100vw);
+      transform: translateX(-100%);
     }
     100% {
       transform: translateX(0px);
-    }
-  }
-
-  @-webkit-keyframes slide-in {
-    0% {
-      transform: translateX(-100vw);
-    }
-    100% {
-      -webkit-transform: translateX(0px);
     }
   }
 
@@ -96,18 +88,11 @@ export const SlideSideBar = styled.div`
       transform: translateX(0px);
     }
     100% {
-      transform: translateX(-100vw);
+      transform: translateX(-100%);
     }
   }
 
-  @-webkit-keyframes slide-out {
-    0% {
-      -webkit-transform: translateX(0px);
-    }
-    100% {
-      -webkit-transform: translateX(-100vw);
-    }
-  }
+  
 `
 
 export const StyledVideo = styled.video`

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef, useEffect} from 'react'
 import {
   MainDashboardComponent,
   BottomText,
@@ -11,14 +11,23 @@ import {
   LeftPaddingFood,
   QuoteText,
   BottomArrow,
-  StyledMdKeyboardArrowDown
+  StyledMdKeyboardArrowDown,
+  PinkSection
 } from './styles'
 import { Spacer } from '../SideBar/style'
 import Header from '../Header'
 import { useNavigate } from 'react-router'
+import PinkSectionComponent from '../PinkSectionComponent'
 
 const DashboardFront = ({ sideBarOpen, setSideBarOpen }) => {
+  // const pinkRef = useRef(null)
   const navigate  = useNavigate()
+  // let pinkSection
+
+  //  useEffect(() => {
+  //   pinkSection = pinkRef && pinkRef.current && pinkRef.current.getBoundingClientRect().top
+  // }, [pinkRef && pinkRef.current && !!pinkRef.current])
+
   return (
     <MainDashboardComponent>
       <StyledVideo
@@ -37,7 +46,7 @@ const DashboardFront = ({ sideBarOpen, setSideBarOpen }) => {
       ></Header>
       <BottomText>
         Indulgence
-        <BottomTextDescription>by ayesha </BottomTextDescription>
+        <BottomTextDescription>by sheikh</BottomTextDescription>
         <div>
           <Spacer multiply='0.3'></Spacer>
           <StyledButton
@@ -59,6 +68,9 @@ const DashboardFront = ({ sideBarOpen, setSideBarOpen }) => {
       </LeftPaddingFood>
       </BlackSection>
       <GreySection></GreySection>
+      <PinkSection>
+        <PinkSectionComponent useRef={useRef} navigate={navigate} StyledButton={StyledButton}></PinkSectionComponent>
+      </PinkSection>
     </MainDashboardComponent>
   )
 }

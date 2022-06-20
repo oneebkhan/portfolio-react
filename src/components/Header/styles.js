@@ -9,11 +9,13 @@ export const StyledHeaderContainer = styled.div`
   justify-content: space-between;
   top: 0;
   width: 90%;
+  transform: translate3d(0, 0, 0);
   animation-timing-function: ease-in-out;
   opacity: 0;
   animation: slideDown 700ms 1;
   animation-delay: 500ms;
   animation-fill-mode: forwards;
+  z-index: 1;
 `
 
 export const StyledMdMenu = styled(MdMenu)`

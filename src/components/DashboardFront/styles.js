@@ -73,16 +73,6 @@ export const StyledVideo = styled.video`
     }
   }
 `
-export const GreySection = styled.div`
-  background-color: rgb(41,55,72);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100vw;
-  color: white;
-  padding: 10vh 0vh 9vh 0vh;
-  height: 2000px;
-`
 
 export const BlackSection = styled.div`
   display: flex;
@@ -90,25 +80,26 @@ export const BlackSection = styled.div`
   align-items: center;
   width: 100vw;
   color: white;
-  padding: 10vh 0vh 9vh 0vh;
+  margin: 10vh 0vh 9vh 0vh;
 `
 
 export const LeftPaddingFood = styled.div`
-  padding-left: 80%;
+  margin-left: 80%;
 
   @media only screen and (max-width: 1100px) {
-    padding-left: 70%;
+    margin-left: 70%;
   }
   @media only screen and (max-width: 800px) {
-    padding-left: 50%;
+    margin-left: 50%;
   }
   @media only screen and (max-width: 500px) {
-    padding-left: 40%;
+    margin-left: 40%;
   }
 `
 
 export const SpinningFood = styled.img`
   animation: rotation 50s infinite linear;
+  transform: translate3d(0, 0, 0);
   
   @keyframes rotation {
     from {
@@ -123,11 +114,11 @@ export const SpinningFood = styled.img`
 export const QuoteText = styled.div`
   position: absolute;
   font-size: 2vw;
-  padding-left: 9vw;
+  margin-left: 9vw;
   max-width: 40%;
 
   @media only screen and (max-width: 800px) {
-    padding-left: 10%;
+    margin-left: 10%;
     font-size: 2vh;
   }
 `
@@ -161,4 +152,24 @@ export const BottomArrow = styled.div`
 
 export const StyledMdKeyboardArrowDown = styled(MdKeyboardArrowDown)`
   width: 3vh;
+`
+
+export const GreySection = styled.div`
+  background-color: rgb(25,25,28);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  color: white;
+  padding: 10vh 0vh 9vh 0vh;
+  height: 200px;
+`
+
+export const PinkSection = styled.div`
+  background-color: rgb(254,193,218);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  color: white;
 `
